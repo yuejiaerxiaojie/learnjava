@@ -15,15 +15,17 @@ public class Main {
         Main main = new Main();
         //读取文件
         readStudentInfo(main);
+
         //展示list、map、set中的数据
         showStudentInfo(main);
-        //根据ID排序并写入student.txt
-        reorderByID(main);
-        writeStudentInfo(main);
 
-        //根据name长度排序并写入student.txt
+        //根据ID排序并写入student_copy.txt
+        reorderByID(main);
+        writeStudentInfo(main,main.fileCopyPath);
+
+        //根据name长度排序并写入student_copy.txt
         reorderByName(main);
-        writeStudentInfo(main);
+        writeStudentInfo(main,main.fileCopyPath);
     }
 
     public static void readStudentInfo(Main main){
@@ -46,7 +48,7 @@ public class Main {
             int score2 = Integer.parseInt(LineContents[4].split(":")[1]);
             Student student = new Student(studentID, studentName, studentAge, score1, score2);
 
-            //将结构体数据写入list
+            //将结构体数据写入list、map、set
             main.list.add(student);
             main.listStr.add(student.getStudentInfo() + "\r\n");
             main.map.put(studentID, student.getStudentInfo());
@@ -117,13 +119,13 @@ public class Main {
         }
     }
 
-    public  static void writeStudentInfo(Main main){
-        OperateFile.writeFileByBytes(main.fileCopyPath,"\r\n",true);
+    public  static void writeStudentInfo(Main main,String filePath){
+        OperateFile.writeFileByBytes(filePath,"\r\n",true);
         //读取student文件内容
         for(Student stu : main.list){
-            OperateFile.writeFileByBytes(main.fileCopyPath,stu.getStudentInfo()+ "\r\n",true);
+            OperateFile.writeFileByBytes(filePath,stu.getStudentInfo()+ "\r\n",true);
         }
         System.out.println("写入student.txt");
-        System.out.println(OperateFile.readFile(main.fileCopyPath));
+        System.out.println(OperateFile.readFile(filePath));
     }
 }
