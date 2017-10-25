@@ -1,10 +1,6 @@
 package com.company;
 
-import javax.sound.sampled.Line;
 import java.util.*;
-
-import static java.lang.System.in;
-import static jdk.nashorn.internal.objects.NativeArray.forEach;
 
 public class Main {
 
@@ -12,8 +8,8 @@ public class Main {
     private List<String> listStr = new ArrayList<String>();
     private Map map = new HashMap();
     private Set set = new HashSet();
-    private String filePath = "D:/00_git_code/learnjava-1/student.txt";
-    private String fileCopyPath = "D:/00_git_code/learnjava-1/student_copy.txt";
+    private String filePath = "D:/00_git_code/learnjava/01.Collection & Iterator/student.txt";
+    private String fileCopyPath = "D:/00_git_code/learnjava/01.Collection & Iterator/student_copy.txt";
 
     public static void main(String[] args) {
         Main main = new Main();
@@ -93,7 +89,8 @@ public class Main {
         Collections.sort(main.list, new Comparator<Student>() {
             @Override
             public int compare(Student s1, Student s2) {
-                return Integer.parseInt(s1.getStudentID()) == Integer.parseInt(s2.getStudentID()) ? 0 : Integer.parseInt(s1.getStudentID()) - Integer.parseInt(s2.getStudentID());
+                return Integer.parseInt(s1.getStudentID()) == Integer.parseInt(s2.getStudentID())
+                        ? 0 : Integer.parseInt(s1.getStudentID()) - Integer.parseInt(s2.getStudentID());
             }
         });
 
@@ -109,7 +106,8 @@ public class Main {
         Collections.sort(main.list, new Comparator<Student>() {
             @Override
             public int compare(Student s1, Student s2) {
-                return s1.getName().length() == s2.getName().length() ? s1.getName().compareTo(s2.getName()) : s1.getName().length() - s2.getName().length();
+                return s1.getName().length() == s2.getName().length()
+                        ? s1.getName().compareTo(s2.getName()) : s1.getName().length() - s2.getName().length();
             }
         });
 
