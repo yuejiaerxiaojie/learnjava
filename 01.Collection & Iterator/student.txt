@@ -1,0 +1,6 @@
+studentId:001;name:natasha;age:18;score1:82;score2:90
+studentId:002;name:alice;age:20;score1:87;score2:83
+studentId:003;name:mark;age:19;score1:80;score2:91
+studentId:004;name:kimberly;age:22;score1:77;score2:79
+studentId:005;name:eric;age:18;score1:82;score2:90
+studentId:006;name:allen;age:24;score1:87;score2:94

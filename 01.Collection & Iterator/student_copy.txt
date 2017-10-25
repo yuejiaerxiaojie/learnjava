@@ -1,0 +1,14 @@
+
+001 natasha 18 82 90 
+002 alice 20 87 83 
+003 mark 19 80 91 
+004 kimberly 22 77 79 
+005 eric 18 82 90 
+006 allen 24 87 94 
+
+005 eric 18 82 90 
+003 mark 19 80 91 
+002 alice 20 87 83 
+006 allen 24 87 94 
+001 natasha 18 82 90 
+004 kimberly 22 77 79 
